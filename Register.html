@@ -1,0 +1,17 @@
+<?php
+      $connection = mysqli_connect("localhost", "root", "", "klinic");
+    $student_id =$_POST['login_id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $mobile = $_POST['mobile'];
+    $address = $_POST['address'];
+    $query ="INSERT INTO `register`(`login_id`, `Name`, `email`, `Password`, `mobile`, `Address`) 
+    VALUES ('$login_id','$name','$email','$password','$mobile','$address')";
+     $query_run = mysqli_query( $connection,$query);
+     
+?>
+<script type="text/javascript">
+   alert("Registration successfully.....You may login now.");
+   window.location.href = "login.html";
+</script>

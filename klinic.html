@@ -1,0 +1,19 @@
+<?php
+    $connection = mysqli_connect("localhost", "root", "", "klinic");
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
+$query ="INSERT INTO  `contact`(`name`, `email`, `subject`, `message`) VALUES ('$name','$email','$subject','$message')";
+     $query_run = mysqli_query( $connection,$query);
+     if($query_run)
+     {
+      header('location:index.html');exit;
+          }
+     else
+     {
+        echo "query failed..";
+     }
+     
+?>

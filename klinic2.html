@@ -1,0 +1,23 @@
+<?php
+      $connection = mysqli_connect("localhost", "root", "", "klinic");
+
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+      $mobile = $_POST['mobile'];
+      $doctor = $_POST['doctor'];
+      $date = $_POST['date'];
+      $optional_date = $_POST['optional_date'];
+      $problem = $_POST['problem'];
+$query = "INSERT INTO `appointment`(`id`, `name`, `email`, `mobile`, `doctor`, `date`, `time`, `problem`) 
+      VALUES ('$id','$name','$email','$mobile','$doctor','$date','$time','$problem')";
+      $query_run = mysqli_query( $connection,$query);
+      if($query_run)
+      {
+       header('location:index.html');exit;
+           }
+      else
+      {
+         echo "query failed..";
+      }
+      
+?>
